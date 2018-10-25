@@ -46,3 +46,5 @@ would return
 	errorOutput: "Where is the thing?!"
 }
 ```
+
+You can find the full list of HTTP errors currently added in th errors.js file. It's currently just a large javascript object with sub-objects representing each status.
