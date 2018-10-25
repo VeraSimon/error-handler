@@ -14,7 +14,7 @@ server.use(express.json());
 server.get('/hello/:name', (req, res, next) => {
 	const { name } = req.params;
 	if(name === "Vera") {
-		res.status(200).json({ message: `Hello ${name` });
+		res.status(200).json({ message: `Hello ${name}!` });
 	} else {
 		next(["h404", `Why are you here ${name}`]);
 	}
