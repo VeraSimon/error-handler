@@ -1,6 +1,7 @@
 # error-handler
 Just a simple HTTP error handler middleware for express.js
 
+## handlers.js/errorHandler
 Drop the folder somewhere in your Express project, import errorHandler from handlers.js, then add `server.use(ErrorHandler)` or `route.use(errorHandler)` after your routes. The simplest examples I can think of is as follows:
 
 ``` javascript
@@ -30,11 +31,11 @@ const port = 8080;
 server.listen(port, () => console.log(`\n~~~ server listening on port ${port} ~~~\n`));
 ```
 
-
+## handlers.js/statusObj
 handlers.js also has a `statusObj` function that takes in a status and message, and returns the status object that would be returned to the browser in the example above.
 
-
 `statusObj("h404", "Where is the thing?!")`
+
 would return
 
 ```
@@ -47,4 +48,5 @@ would return
 }
 ```
 
+## errors.js/errors
 You can find the full list of HTTP errors currently added in th errors.js file. It's currently just a large javascript object with sub-objects representing each status.
