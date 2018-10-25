@@ -1,6 +1,6 @@
 const { errors } = require('./errors');
 
-// node.js middleware
+// express.js middleware
 const errorHandler = (err, req, res, next) => {
 	// err = [status, message]
 	// err[0] = HTTP status. Used in res.status().
