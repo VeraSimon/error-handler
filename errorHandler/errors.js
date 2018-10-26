@@ -29,7 +29,7 @@ const errors = {
 		errorOutput: null
 	},
 	h405: {
-		httpStatus: 404,
+		httpStatus: 405,
 		title: 'Method Not Allowed',
 		description: 'A request method is not supported for the requested resource',
 		recoveryInstructions: 'Please ensure your HTTP request is of the proper type and try again.',
