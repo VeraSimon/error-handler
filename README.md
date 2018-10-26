@@ -4,7 +4,7 @@ Just a simple HTTP error handler middleware for express.js
 
 ## handlers.js/errorHandler
 
-Drop the folder somewhere in your Express project, import errorHandler from handlers.js, then add `server.use(errorHandler)` or `route.use(errorHandler)` after your routes. The simplest examples I can think of is as follows:
+Drop the folder somewhere in your Express project, import errorHandler from handlers.js, then add `server.use(errorHandler)` or `route.use(errorHandler)` after your routes. The simplest examples I can think of are as follows:
 
 ```javascript
 const express = require('express');
