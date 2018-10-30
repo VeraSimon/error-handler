@@ -19,7 +19,18 @@ server.get('/hello/:name', (req, res, next) => {
 	if (name === 'Vera' || name === 'vera') {
 		res.status(200).json({ message: `Hello ${name}!` });
 	} else {
+		// Base errorHandler call
 		next(['h404', `Why are you here ${name}?`]);
+	}
+});
+
+server.get('/goodbye/:name', (req, res, next) => {
+	const { name } = req.params;
+	if (name !== 'Joja Cola') {
+		res.status(200).json({ message: `Goodbye ${name}! Have a nice day!` });
+	} else {
+		// errorHandler with optional KVPs passed
+		next(['h404', `Why are you here ${name}?`, { message: `${name} is the worst`, error: `No ${name} allowed!` }]);
 	}
 });
 
@@ -37,11 +48,15 @@ server.listen(port, () => console.log(`\n~~~ server listening on port ${port} ~~
 
 handlers.js also has a `statusObj` function that takes in a status and message, and returns the status object that would be returned to the browser in the example above.
 
-`statusObj('h404', 'Where is the thing?!')`
+### _Base statusObj example_
+
+```javascript
+statusObj('h404', 'Where is the thing?!');
+```
 
 would return
 
-```
+```javascript
 {
 	httpStatus: 404,
 	title: 'Object not found',
@@ -49,6 +64,25 @@ would return
 	recoveryInstructions: 'Please ensure you specify an existing object and try again.',
 	errorOutput: 'Where is the thing?!'
 }
+```
+
+### _statusObj example with optional KVP_
+
+```javascript
+statusObj('h500', 'The database fell over :(', { error: 'Poor database ;_;' });
+```
+
+would return
+
+```javascript
+{
+	httpStatus: 404,
+	title: 'Object not found',
+	description: 'The server was unable to find the specified object',
+	recoveryInstructions: 'Please ensure you specify an existing object and try again.',
+	errorOutput: 'The database fell over :(',
+	error: 'Poor database ;_;'
+};
 ```
 
 ## errors.js/errors
