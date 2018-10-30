@@ -10,7 +10,7 @@ const errorHandler = (err, req, res, next) => {
 	const message = err[1];
 
 	// ruh roh. "status" isn't in errors...
-	if (!errors.hasOwnProperty(status)) throw new Error(`Uncaught Exception! Please review:\n${err}`);
+	if (!errors.hasOwnProperty(status)) throw `Uncaught Exception! Please review:\n${err}`;
 
 	// continue as normal
 	if (status === 'h500') console.error('Error:\n', message);
