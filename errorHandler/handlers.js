@@ -1,4 +1,14 @@
+let isDotEnv = true;
+try {
+	require('dotenv').config();
+} catch (e) {
+	isDotEnv = false;
+	console.log('INFO: dotenv is not installed.');
+}
+
 const { errors } = require('./errors');
+
+const debugging = process.env.DEBUGGING.toLowerCase() === 'true' || false;
 
 // express.js middleware
 const errorHandler = (err, req, res, next) => {
@@ -15,7 +25,11 @@ const errorHandler = (err, req, res, next) => {
 	if (!errors.hasOwnProperty(status)) throw `Uncaught Exception! Please review:\n${err}`;
 
 	// continue as normal
-	if (status === 'h500') console.error('Error:\n', message);
+	if (!isDotEnv) {
+		if (status === 'h500') console.error('Error:\n', message);
+	} else {
+		if (status === 'h500' && debugging === true) console.error('Error:\n', message);
+	}
 	const error = { ...errors[status], errorOutput: message };
 	if (kvps !== null && kvps !== undefined && typeof kvps === 'object') {
 		for (let key in kvps) {
@@ -29,6 +43,7 @@ const errorHandler = (err, req, res, next) => {
 const statusObj = (status, message, kvps) => {
 	// status = http status
 	// message = arbitrary message provided by the function call
+	// kvps = Optional object of arbitrary key-value pairs to add to the returned error object
 	if (!errors.hasOwnProperty(status)) {
 		return { error: `HTTP status '${status}' not defined!`, status, message };
 	} else {
