@@ -1,12 +1,5 @@
 // https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
 
-// h###_#: {
-//    httpStatus: '###.#',
-//    title: '',
-//    description: '',
-//    recoveryInstructions: ''
-// }
-
 const iana = {
    h100: {
       httpStatus: '100',

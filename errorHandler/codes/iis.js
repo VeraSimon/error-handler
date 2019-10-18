@@ -1,12 +1,5 @@
 // https://support.microsoft.com/en-us/help/943891/the-http-status-code-in-iis-7-0-iis-7-5-and-iis-8-0
 
-// h###_#: {
-//    httpStatus: '###.#',
-//    title: '',
-//    description: '',
-//    recoveryInstructions: ''
-// }
-
 const iis = {
    h400_1: {
       httpStatus: '400.1',
