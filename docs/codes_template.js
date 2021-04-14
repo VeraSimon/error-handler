@@ -4,7 +4,9 @@ const service_name = {
       httpStatus: '###.#',
       title: '',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    }
    */
 };
