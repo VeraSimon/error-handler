@@ -5,19 +5,25 @@ const aws = {
       httpStatus: '460',
       title: 'Client Closed The Connection',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h463: {
       httpStatus: '463',
       title: 'More Than 30 X-Forwarded-For IP Addresses',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h561: {
       httpStatus: '561',
       title: 'Unauthorized',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    }
 };
 

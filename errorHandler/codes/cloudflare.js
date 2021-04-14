@@ -5,55 +5,73 @@ const cloudflare = {
       httpStatus: '520',
       title: 'Unknown Error',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h521: {
       httpStatus: '521',
       title: 'Web Server Is Down',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h522: {
       httpStatus: '522',
       title: 'Connection Timed Out',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h523: {
       httpStatus: '523',
       title: 'Origin Is Unreachable',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h524: {
       httpStatus: '524',
       title: 'A Timeout Occurred',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h525: {
       httpStatus: '525',
       title: 'SSL Handshake Failed',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h526: {
       httpStatus: '526',
       title: 'Invalid SSL Certificate',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h527: {
       httpStatus: '527',
       title: 'Railgun Error',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    },
    h530: {
       httpStatus: '530',
       title: 'Origin DNS Error',
       description: '',
-      recoveryInstructions: ''
+      recoveryInstructions: '',
+      extraHeaders: [],
+      extraBody: []
    }
 };
 
